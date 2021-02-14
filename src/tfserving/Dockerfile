@@ -38,10 +38,11 @@ RUN pip install pip --upgrade
 RUN pip install -U pip setuptools
 
 # Move the requirements.txt file to the Docker image
-COPY requirements.txt .
+RUN mkdir tfserving/
+COPY . tfserving/
 
 # Installs the TensorFlow Serving requirements
-RUN pip install -r requirements.txt
+RUN pip install -r tfserving/requirements.txt
 RUN echo "deb [arch=amd64] http://storage.googleapis.com/tensorflow-serving-apt stable tensorflow-model-server tensorflow-model-server-universal" | tee /etc/apt/sources.list.d/tensorflow-serving.list && \
 curl https://storage.googleapis.com/tensorflow-serving-apt/tensorflow-serving.release.pub.gpg | apt-key add -
 RUN apt-get update && apt-get install tensorflow-model-server -y
