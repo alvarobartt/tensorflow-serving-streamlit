@@ -2,24 +2,24 @@ version: "3"
 
 services:
   tfserving:
-    build: tfserving/
+    build: src/tfserving/
     ports: 
       - 8500:8500
       - 8501:8501
     networks:
-      - deploy_network
+      - backend
     container_name: tfserving
 
   streamlit:
-    build: streamlit/
+    build: src/streamlit/
     depends_on:
       - tfserving
     ports: 
         - 8502:8502
     networks:
-      - deploy_network
+      - backend
     container_name: streamlit
 
 networks:
-  deploy_network:
+  backend:
     driver: bridge
