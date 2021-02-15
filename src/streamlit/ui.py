@@ -9,8 +9,8 @@ from utils import image2tensor
 from constants import REST_URL, MAPPING
 
 # General information about the UI
-st.title("What Simpsons character is this? :sparkles: :framed_picture:")
-st.header("UI for the SimpsonsNet developed in [serving-tensorflow-models](https://github.com/alvarobartt/serving-tensorflow-models)")
+st.title("TensorFlow Serving + Streamlit! :sparkles: :framed_picture:")
+st.header("UI to use a TensorFlow image classification model of The Simpsons characters (named SimpsonsNet) served with TensorFlow Serving.")
 
 # Show which are the classes that the SimpsonsNet model can predict
 if st.checkbox("Show classes"):

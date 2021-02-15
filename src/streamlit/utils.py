@@ -11,11 +11,11 @@ def image2tensor(image_as_bytes):
     """
 
     # Apply the same preprocessing as during training (resize and rescale)
-    img = tf.io.decode_image(image_as_bytes, channels=3)
-    img = tf.image.resize(img, [224, 224])
-    img = img/255.
+    image = tf.io.decode_image(image_as_bytes, channels=3)
+    image = tf.image.resize(image, [224, 224])
+    image = image/255.
 
     # Convert the Tensor to a batch of Tensors and then to a list
-    img = tf.expand_dims(img, 0)
-    img = img.numpy().tolist()
-    return img
+    image = tf.expand_dims(image, 0)
+    image = image.numpy().tolist()
+    return image
