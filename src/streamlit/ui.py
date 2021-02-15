@@ -29,17 +29,21 @@ else:
     st.image(image_as_bytes, use_column_width=True)
     pred_button = st.button("Predict")
 
-# Converts the input image into a Tensor
-image_tensor = image2tensor(image_as_bytes=image_as_bytes)
+if pred_button:
+    # Converts the input image into a Tensor
+    image_tensor = image2tensor(image_as_bytes=image_as_bytes)
 
-# Prepare the data that is going to be sent in the POST request
-json_data = {
-  "instances": image_tensor
-}
+    # Prepare the data that is going to be sent in the POST request
+    json_data = {
+        "instances": image_tensor
+    }
 
-# Send the request to the Prediction API
-response = requests.post(REST_URL, json=json_data)
+    # Send the request to the Prediction API
+    response = requests.post(REST_URL, json=json_data)
 
-# Retrieve the highest probablity index of the Tensor (actual prediction)
-prediction = response.json()['predictions'][0]
-label = prediction2label(prediction=prediction)
+    # Retrieve the highest probablity index of the Tensor (actual prediction)
+    prediction = response.json()['predictions'][0]
+    label = prediction2label(prediction=prediction)
+
+    # Write the predicted label for the input image
+    st.write(f"Predicted The Simpsons character is: {label}")
