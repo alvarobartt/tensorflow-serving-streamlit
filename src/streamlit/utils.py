@@ -32,4 +32,4 @@ def prediction2label(prediction):
 
     # Retrieve the highest probablity index of the Tensor (actual prediction)
     prediction = tf.argmax(prediction)
-    return MAPPING[prediction.numpy()])
+    return MAPPING[prediction.numpy()]
