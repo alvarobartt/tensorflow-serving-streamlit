@@ -12,6 +12,7 @@ RUN apt-get update \
     python3-dev \
     python3-distutils \
     python3-venv \
+    curl \
     && rm -rf /var/lib/apt/lists/* \
     && cd /tmp \
     && curl -O https://bootstrap.pypa.io/get-pip.py \
@@ -34,11 +35,12 @@ RUN pip install pip --upgrade
 RUN pip install -U pip setuptools
 
 # Move the current directory to the Docker image
-RUN mkdir streamlit/
-COPY . streamlit/
+RUN mkdir /streamlit
+COPY . /streamlit
+WORKDIR /streamlit
 
 # Install the requirements
-RUN pip install -r streamlit/requirements.txt
+RUN pip install -r requirements.txt
 
 # Sets the proper rights to the created Python env
 RUN chown -R model-server /home/venv
