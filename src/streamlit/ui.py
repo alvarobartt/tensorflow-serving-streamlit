@@ -5,16 +5,17 @@ import streamlit as st
 
 import requests
 
-from utils import image2tensor
+from utils import image2tensor, prediction2label
 from constants import REST_URL, MAPPING
 
 # General information about the UI
-st.title("TensorFlow Serving + Streamlit! :sparkles: :framed_picture:")
+st.title("TensorFlow Serving + Streamlit! ✨🖼️")
 st.header("UI to use a TensorFlow image classification model of The Simpsons characters (named SimpsonsNet) served with TensorFlow Serving.")
 
 # Show which are the classes that the SimpsonsNet model can predict
 if st.checkbox("Show classes"):
-    st.write(f"The SimpsonsNet can predict the following characters: {MAPPING}")
+    st.write("The SimpsonsNet can predict the following characters:")
+    st.write(MAPPING)
 
 # Create a FileUploader so that the user can upload an image to the UI
 uploaded_file = st.file_uploader(label="Upload an image of any of the available The Simpsons characters (please see Classes).",
