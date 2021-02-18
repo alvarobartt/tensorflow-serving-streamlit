@@ -1,4 +1,4 @@
-# TensorFlow Serving + Streamlit! :sparkles: :framed_picture:
+# TensorFlow Serving + Streamlit! :sparkles::framed_picture:
 
 __Serve TensorFlow ML models with TF-Serving and then create a Streamlit UI to use them!__
 
