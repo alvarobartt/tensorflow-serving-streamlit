@@ -1,4 +1,6 @@
-# :framed_picture: Serve TensorFlow ML models with TF-Serving and then create a Streamlit UI to use them!
+# TensorFlow Serving + Streamlit! :sparkles: :framed_picture:
+
+__Serve TensorFlow ML models with TF-Serving and then create a Streamlit UI to use them!__
 
 This is a pretty simple [Streamlit](https://www.streamlit.io/) UI to expose the functionality
 of a [TensorFlow](https://www.tensorflow.org/) image classification CNN served using 
