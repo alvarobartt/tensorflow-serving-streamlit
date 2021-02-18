@@ -6,7 +6,8 @@ of a [TensorFlow](https://www.tensorflow.org/) image classification CNN served u
 
 In this case, we will be serving the ML model developed at 
 [alvarobartt/serving-tensorflow-models](https://github.com/alvarobartt/serving-tensorflow-models), which
-is an image classification CNN to classify images from The Simpsons Characters.
+is an image classification CNN to classify images from 
+[The Simpsons Characters](https://www.kaggle.com/alexattia/the-simpsons-characters-dataset).
 
 ---
 
@@ -23,10 +24,11 @@ which means that you will also need to have [Docker](https://www.docker.com/) in
 
 We will deploy the following Docker Containers:
 
-- djfisjfds
-- dfsafdsafs
+- `src/tfserving`: contains the TF-Serving API deployment.
+- `src/streamlit`: contains the code of the UI connected to the deployed API.
 
-That said, you can easily deploy them with Docker Compose as it follows:
+That said, you can easily deploy them with Docker Compose. So we will start off 
+with the initial step which is __building the containers__, with the following command:
 
 ```
 docker-compose build --force-rm
@@ -34,19 +36,19 @@ docker-compose build --force-rm
 
 __Note__: we use `--force-rm` so as to force the removal of the intermediate Docker containers.
 
-Once built, we can proceed to deploy it with the following command:
+Once built, we can proceed to __deploy the containers__ with the following command:
 
 ```
 docker-compose up
 ```
 
-Finally, whenever you want to stop the containers you can use the following command:
+Finally, whenever you want to __stop the containers__ you can use the following command:
 
 ```
 docker-compose stop
 ```
 
-And additionally, you can also remove the containers once you don't need them anymore with 
+And additionally, you can also __remove the containers__ once you don't need them anymore with 
 the following command:
 
 ```
@@ -56,3 +58,8 @@ docker-compose rm
 ---
 
 ## :book: Contact information
+
+You can contact me or know me via any of the following:
+
+- :bird: Twitter: https://twitter.com/alvarobartt
+- :octocat: GitHub: https://github.com/alvarobartt
