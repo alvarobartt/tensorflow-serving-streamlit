@@ -56,12 +56,3 @@ the following command:
 ```
 docker-compose rm
 ```
-
----
-
-## :book: Contact information
-
-You can contact me or know me via any of the following:
-
-- :bird: Twitter: https://twitter.com/alvarobartt
-- :octocat: GitHub: https://github.com/alvarobartt
